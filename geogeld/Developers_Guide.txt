@@ -1,20 +1,52 @@
 __author__ = "Ahmad Moalla"
 __email__ = "ahm@berlin.com"
 '''
-1. Use only relative paths if possible (configuration only relative paths).
+1. Use only relative paths if possible (in configuration use only relative paths).
 2. Use the {% url %} tag
-		Instead of hardcoding individual links, try using the backwards compatible {% url %} tag to achieve the same result. This will give you the absolute URL, so that if, heaven forbid, your Django project moves the links will still remain in tact.
-3. Document your code explaining by comments what you are doing, imagine your grandma is reading the code, make her proud :)
+		Instead of hardcoding individual links, try using the backwards compatible
+		{% url %} tag to achieve the same result. This will give you the absolute URL,
+		so that if, heaven forbid, your Django project moves the links will still remain in tact.
+3. Document your code explaining by comments explaining what you are doing, imagine your grandma
+		is reading the code, make her proud :)
 4. Use the #TODO tag to mark what is next.
 5. Think about django admin when writing models.
-6. Put all static files in Static folder (images, js or CSS) define new directory if needed for new types.
+6. Put all static files in Static folder (images, js or CSS)
+		define new directory if needed for new static contents types.
 7. Put all templates in templates directory. Create new directories for each app.
-8. Avoid using third parties app and scripts if possible. Django has an amazing power, let's use it to the max.
-9. Write test of your defined models and views.
-10. For each new python file write your name and email at the top of the page using the __aithor__ and __email__ tags.
-11. For each new view and email , write your name and email into a comment. 
-12. Add and correct what you think is wrong in this document or anywhere in the project.
-13. Write unit tests if possible.
-14. Have a look at this Django cheat_sheet : http://www.mercurytide.co.uk/media/whitepapers/django-cheat-sheet/django10-cheat-sheet.pdf
-15. Stick to the Issue Tracking System we are suing. Currently we use the github issues feature, but this will change soon. Make comments and enhance the issues there : https://github.com/ahmadmoalla/geogeld/issues?milestone=1&state=open
+8. Avoid using third parties app and scripts if possible. Django has an amazing power,
+		let's use it to the max.
+9. Write unit tests for your defined models and views when possible.
+10. For each new python file write your name and email at the top of the page using 
+		the __author__ and __email__ tags.
+11. For each new view and model , write your name in a comment. 
+12. Add and correct what you think is wrong in this document or anywhere in the project
+		if you think no body is working on that particular code you are correcting.
+13. Have a look at this Django cheat_sheet : 
+		http://www.mercurytide.co.uk/media/whitepapers/django-cheat-sheet/django10-cheat-sheet.pdf
+14. Stick to the Issue Tracking System we are suing. Currently we use the github issues feature,
+		ut this will change soon. Make comments and enhance the issues there : 
+		https://github.com/ahmadmoalla/geogeld/issues?milestone=1&state=open
+15. Avoid too long lines of code if possible.
+16. Avoid using single qutation '' in your code if possible, use always ""
+17. Try always to do small research to find out the best practice before writing new code.
+18. You are the master of what you do, feel free to reorganize the code and introduce
+		new features as necessary.
+19. Sleep well, avoid junk food and maintain healthy life ;)
 '''
+
+#Geogeld 2.0:
+	#TODO fixtures
+	#TODO think about l10n & i18n
+	#TODO implement slave database and invistigate when to write to it.
+	#TODO implement memcach
+	#TODO implement google maps
+	#TODO implement search engine e.g. Elastic Search
+	#TODO implement redis
+	#TODO facebook & twitter connect
+	#TODO implement CDN
+	#TODO mobile number verfication
+	#TODO implement geolocation redirection and detction
+	#TODO SEO
+	#TODO messages between users
+	#TODO user tracking and site analytics
+	#TODO Switch main functionalities to API
