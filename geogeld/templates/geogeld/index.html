@@ -1,0 +1,44 @@
+{% extends 'geogeld/base.html' %}
+
+{% block header-extra %}
+<div id="header-buttons">
+	<a id="explore-button" href="/explore">Explore</a>
+	<a id="login-button" href="/login">Login</a>
+</div>
+{% endblock header-extra %}
+
+{% block content %}
+
+<div id="left-column">
+	<div id="job-listings">
+	{% if listings %}
+		{% for listing in listings %}
+		  <div class="job-listing">
+		      <div class="job-title">{{ listing.title }}</div>
+		      <div class="job-details">{{ listing.payment_rate }} € per hour | {{ listing.address }} - {{ listing.zipcode }} - {{ listing.city }} - {{ listing.country }} <a href="">View map</a></div>
+		  </div>
+		{% endfor %}
+		<div class="clearfix"></div>
+	{% else %}
+	No listing posted yet.
+	{% endif %}
+    </div>
+</div>
+
+<div id="right-column">
+    <div id="ad-banner">
+    ads here
+	</div>
+    <div id="job-posting-box">
+        <form id="quick-posting-form" method="get" action="">
+        YOU NEED HELP IN YOUR HOUSE?
+        <hr />
+        <input class="form-element" type="text" name="job_title" value="Title" />
+        <textarea class="form-element" name="job_description" cols="35" rows="10">Describe it</textarea>
+        <input class="form-element" id="continue-button" type="submit" value="CONTINUE" />
+        </form>
+	</div>
+</div>
+<div class="clearfix"></div>
+
+{% endblock content %}

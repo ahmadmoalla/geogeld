@@ -13,8 +13,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': '/home/ahmad/geogeld/geogeld/geogeld/sqlite.db',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'USER': 'geogeld',                      # Not used with sqlite3.
+        'PASSWORD': 'geogeld',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -116,6 +116,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+
+    'django.contrib.gis',
+
+    'geogeld',
     'accounts',
     'listing',
 )
@@ -148,3 +152,16 @@ LOGGING = {
         },
     }
 }
+
+
+WSG84 = 4326 # Spatial reference system code
+
+# Used in admin's site to define the initial positioning of the map
+BERLIN_CENTER_LONGTITUDE = 1491592.16975 
+BERLIN_CENTER_LATITUDE = 6894161.32819
+
+try:
+    from local_settings import *
+except ImportError:
+    print("local_settings couldn't be imported. Maybe it causes ImportError or some other error")
+    

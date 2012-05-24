@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "accounts.userprofile", "fields": {"city": "Berlin", "first_name": "Ahmad", "last_name": "Moalla", "country": "Germany", "mobile_number": "445688124", "zipcode": "1000", "location": "POINT (13.4095001202098469 52.5366906925501382)", "address": "Berlin main strasse", "birth_date": "1984-06-08", "email": "a7madm3alla@gmail.com"}}]

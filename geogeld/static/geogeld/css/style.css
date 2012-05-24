@@ -1,0 +1,195 @@
+@CHARSET "UTF-8";
+
+a, a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: "Sans serif";
+    font-size: 12pt;
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+#container {
+    width: 100%;
+}
+
+#header {
+    width: 98%;
+    padding: 1%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-bottom: 1%;
+    
+}
+
+
+#content {
+    width: 98%;
+    padding: 1%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-bottom: 1%;
+}
+
+#footer {
+    width: 98%;
+    padding: 1%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    text-align: center;
+    
+    font-size: 14pt;
+    font-weight: bold;
+    color: gray;
+    background-color: #cccccc; 
+  
+}
+
+#left-column {
+  width: 70%;
+  float: left;
+  
+}
+
+#right-column {
+  width: 25%;
+  float: right;
+  
+}
+
+#header-buttons {
+    width: 100%;
+    text-align: right;
+  
+}
+
+#header-buttons a{
+    color: white;
+    background-color: gray;
+    border: 2px solid gray;
+    border-style: outset;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    padding: 4px;
+}
+
+#login-button {
+}
+
+#explore-button {
+}
+
+
+#ad-banner {
+    height: 200px;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 2%;
+    margin-bottom: 2%;
+    
+    text-align: center;
+    
+  
+}
+
+#job-listings {
+    background: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-bottom: 2%;
+
+}
+
+.job-listing {
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    
+    margin-bottom: 2%;
+    padding: 2%;
+}
+
+.job-title {
+    color: #90aa08;
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.job-details {
+    color: gray;
+    text-align: center;
+}
+
+.job-details a {
+    color: gray;
+    font-size: 9pt;
+    float: right;
+}
+
+#job-posting-box {
+}
+
+#quick-posting-form {
+    color: white;
+    font-weight: bold;
+    font-size: 11pt;
+    font-family: "Sans serif";
+    background: #315f83;
+    border: 1px solid gray;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    padding: 4%;
+}
+
+.form-element {
+    width: 98%;
+    color: #aaaaaa;
+    
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-style: outset;
+    
+    padding: 1%;
+    margin-bottom: 2%;
+}
+
+#continue-button {
+    color: white;
+    background-color: #90aa08;
+    border-radius: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+
+    width: 40%;
+    
+    font-size: 13pt;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+}
