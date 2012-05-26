@@ -1,4 +1,5 @@
 # Django settings for geogeld project.
+from django.core.urlresolvers import reverse_lazy
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -116,8 +117,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-
     'django.contrib.gis',
+
+    'django_extensions', # not vital for site functioning; installed only for convenience while working
 
     'geogeld',
     'accounts',
@@ -154,12 +156,15 @@ LOGGING = {
 }
 
 
-WSG84 = 4326 # Spatial reference system code
+
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+
+WSG84 = 4326 # Spatial reference system code (projection)
+SPHERICAL_MERCATOR = 3857 # Spatial reference system code (projection)
 
 # Used in admin's site to define the initial positioning of the map
 BERLIN_CENTER_LONGTITUDE = 1491592.16975 
 BERLIN_CENTER_LATITUDE = 6894161.32819
-
 try:
     from local_settings import *
 except ImportError:
