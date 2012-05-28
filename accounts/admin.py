@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.gis import admin as geoadmin
 from django.conf.__init__ import settings
 from django.contrib.auth.models import User, Group
-from django.contrib.sites.models import Site
+#from django.contrib.sites.models import Site
 
 from accounts.models import UserProfile
 
@@ -19,6 +19,6 @@ class UserProfileAdmin(geoadmin.OSMGeoAdmin):
 
 admin.site.unregister(User)
 admin.site.unregister(Group)
-admin.site.unregister(Site)
+#admin.site.unregister(Site)
 
 admin.site.register(UserProfile, UserProfileAdmin)
