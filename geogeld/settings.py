@@ -12,8 +12,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/ahmad/geogeld/geogeld/geogeld/sqlite.db',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'geogeld',                      # Or path to database file if using sqlite3.
         'USER': 'geogeld',                      # Not used with sqlite3.
         'PASSWORD': 'geogeld',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -165,8 +165,13 @@ SPHERICAL_MERCATOR = 3857 # Spatial reference system code (projection)
 # Used in admin's site to define the initial positioning of the map
 BERLIN_CENTER_LONGTITUDE = 1491592.16975 
 BERLIN_CENTER_LATITUDE = 6894161.32819
-try:
-    from local_settings import *
-except ImportError:
-    print("local_settings couldn't be imported. Maybe it causes ImportError or some other error")
+
+# geos and gdal library path on Heroku
+GEOS_LIBRARY_PATH = '/app/.geodjango/geos/lib/libgeos_c.so'
+GDAL_LIBRARY_PATH = '/app/.geodjango/gdal/lib/libgdal.so'
+
+#try:
+#    from local_settings import *
+#except ImportError:
+#    print("local_settings couldn't be imported. Maybe it causes ImportError or some other error")
     
