@@ -167,8 +167,8 @@ BERLIN_CENTER_LONGTITUDE = 1491592.16975
 BERLIN_CENTER_LATITUDE = 6894161.32819
 
 # geos and gdal library path on Heroku
-GEOS_LIBRARY_PATH = '/app/.geodjango/geos/lib/libgeos_c.so'
-GDAL_LIBRARY_PATH = '/app/.geodjango/gdal/lib/libgdal.so'
+#GEOS_LIBRARY_PATH = '/app/.geodjango/geos/lib/libgeos_c.so'
+#GDAL_LIBRARY_PATH = '/app/.geodjango/gdal/lib/libgdal.so'
 
 #try:
 #    from local_settings import *
