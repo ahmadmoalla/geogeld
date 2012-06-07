@@ -16,7 +16,7 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="{{ STATIC_URL }}/favicon.ico" />
 		<link rel="apple-touch-icon" href="{{ STATIC_URL }}/apple-touch-icon.png" />
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}geogeld/css/style.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}geogeld/css/style.css" />
 		{% block extra_css %}
 		{% endblock extra_css %}
 
@@ -27,17 +27,40 @@
 	<body>
 		<div id="container">
 			<header id="header">
+                {% if user.is_authenticated %}
+                    <div id="user_info"><a href="{% url accounts.views.profile %}">{{ user }}</a></div>
+                {% endif %}
 				<h1>GeoGeld</h1>
 				{% block header-extra %}
-			    	
+					<div id="header-buttons">
+					    <a id="explore-button" href="/listings/search">Explore</a>
+					    {% if user.is_authenticated %}
+					       <a id="logout-button" href="/logout">Logout</a>
+					    {% else %}
+					       <a id="login-button" href="/login">Login</a>
+					    {% endif %}
+					</div>
 				{% endblock header-extra %}
 			</header>
 
 	    <div id="content">
 		{% block content %}
+	    	<div id="left-column">
+            {% block left-column %}
+	    	{% endblock left-column %}
+            </div>
+	    	
+	    	<div id="right-column">
+            {% block right-column %}
+                <div id="ad-banner">
+			    ads here
+			    </div>
+	    	{% endblock right-column %}
+            </div>
 	    	
 		{% endblock content %}
 	    </div>
+	    <div class="clearfix"></div>
 
 			<footer id="footer">
 				<p>

@@ -5,5 +5,5 @@
 *.pydevproject
 .pydevproject
 .project
-.settings
+.settings/
 local_settings.py

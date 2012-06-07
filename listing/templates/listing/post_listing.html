@@ -1,0 +1,17 @@
+{% extends 'geogeld/base.html' %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}listing/css/listing.css" />
+{% endblock extra_css %}
+
+
+{% block left-column %}
+<form id="post-listing-form" method="post" action="/listing/post/">
+<div class="form-header" >Describe the work</div>
+{% csrf_token %}
+{{ post_listing_form.as_p }}
+<p><input type="submit" value="Submit" /></p>
+<div class="clearfix"></div>
+</form>
+<div class="clearfix"></div>
+{% endblock left-column %}

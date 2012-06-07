@@ -38,10 +38,6 @@ body {
 #content {
     width: 98%;
     padding: 1%;
-    border: 1px solid gray;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     margin-bottom: 1%;
 }
 
@@ -81,13 +77,15 @@ body {
 
 #header-buttons a{
     color: white;
-    background-color: gray;
-    border: 2px solid gray;
-    border-style: outset;
+    background-color: #61acd6;
     border-radius: 7px;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     padding: 4px;
+}
+
+#user_info {
+    float: right;
 }
 
 #login-button {

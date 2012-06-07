@@ -1,0 +1,47 @@
+#registration-form, #login-form {
+    width: 98%;
+    padding: 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-bottom: 1%;
+    
+}
+
+#registration-form p, #login-form p {
+  display: block;
+  width: 45%;
+  float: left;
+  padding-left: 1%;
+  line-height: 18px;
+  
+}
+
+#registration-form input, #login-form input {
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    
+  
+}
+
+#registration-form label, #login-form label {
+  float: left;
+  
+}
+
+.form-header {
+  text-align: center;
+  color: #ffffff; 
+  
+  background-color: #61acd6;
+  
+  font-size: 16pt;
+  font-family: "Sans serif";
+  
+  margin: 0;
+  margin-bottom: 1%;
+  padding: 1%;
+}

@@ -1,19 +1,6 @@
 {% extends 'geogeld/base.html' %}
 
-{% block header-extra %}
-<div id="header-buttons">
-	<a id="explore-button" href="/explore">Explore</a>
-	{% if user.is_authenticated %}
-	   <a id="logout-button" href="/logout">Logout</a>
-	{% else %}
-	   <a id="login-button" href="/login">Login</a>
-	{% endif %}
-</div>
-{% endblock header-extra %}
-
-{% block content %}
-
-<div id="left-column">
+{% block left-column %}
 	<div id="job-listings">
 	{% if listings %}
 		{% for listing in listings %}
@@ -27,14 +14,14 @@
 	No listing posted yet.
 	{% endif %}
     </div>
-</div>
+{% endblock left-column %}
 
-<div id="right-column">
+{% block right-column %}
     <div id="ad-banner">
     ads here
 	</div>
     <div id="job-posting-box">
-        <form id="quick-posting-form" method="get" action="">
+        <form id="quick-posting-form" method="post" action="/listings/post/">{% csrf_token %}
         YOU NEED HELP IN YOUR HOUSE?
         <hr />
         <input class="form-element" type="text" name="job_title" value="Title" />
@@ -42,7 +29,5 @@
         <input class="form-element" id="continue-button" type="submit" value="CONTINUE" />
         </form>
 	</div>
-</div>
+{% endblock right-column %}
 <div class="clearfix"></div>
-
-{% endblock content %}
