@@ -6,7 +6,7 @@ function chose_category(){
 	$('.job-category-button').removeClass('chosen');
 	$button.addClass('chosen');
 	
-	$('#job-category').val($button.val());
+	$('#job-category').val($button.attr('cat-name'));
 }
 
 function toggle_job_title_state(){

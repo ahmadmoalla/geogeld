@@ -24,7 +24,8 @@ def login_or_registration(request, template_name='accounts/login_or_registration
         post_data = dict(request.POST) # we need this because QueryDict is immutable
         location_string = ''.join(post_data.get('location'))  # use ''.join() to stringify the list
         if location_string:
-            post_data['location'] = location_string.replace(''.join(re.findall('(SRID=.*;)POINT', location_string)), '') # Extract the SRID=...; part of the location value
+            # Extract the SRID=...; part of the location value
+            post_data['location'] = location_string.replace(''.join(re.findall('(SRID=.*;)POINT', location_string)), '') 
 
         registration_form = RegistrationForm(request.POST)
         # authenticate and log the user in after the account in created

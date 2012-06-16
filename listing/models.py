@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.gis.db import models as geomodels
-
 from django.conf.__init__ import settings
-from accounts.models import UserProfile
+
+from accounts.models import User
 
 
 PAYMENT_TYPE = {
@@ -42,7 +42,7 @@ class Listing(models.Model):
         verbose_name = 'listing'
         verbose_name_plural = 'listings'
 
-    user = models.ForeignKey(UserProfile, help_text="User")
+    user = models.ForeignKey(User, help_text="User")
     category = models.ForeignKey(Category, default=1, help_text="")
     title = models.CharField(max_length=1024, null=False, blank=False, help_text="")
     description = models.TextField(null=True, blank=True, help_text="")

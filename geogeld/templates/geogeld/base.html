@@ -30,12 +30,15 @@
 	<body>
 		<div id="container">
 			<header id="header">
-				<a href="{% url home %}"><h1>GeoGeld</h1></a>
 				{% block header-extra %}
 					<div class="navbar">
 					  <div class="navbar-inner">
+						<a href="{% url home %}"><h1 id="logo-text">GeoGeld</h1></a>
+		                {% if user.is_authenticated %}
+		                    <div id="user_info">Logged in as <a href="{% url accounts.views.profile %}">{{ user }}</a></div>
+		                {% endif %}
 					    <div class="container">
-							<ul class="nav pull-right">
+							<ul class="nav" class="pull-right">
 							  <li><a href="{% url listing.views.search %}">Explore</a></li>
 						    {% if user.is_authenticated %}
 						       <li><a id="logout-button" href="{% url logout %}">Logout</a></li>
@@ -46,9 +49,6 @@
 					    </div>
 					  </div>
 					</div>
-	                {% if user.is_authenticated %}
-	                    <div id="user_info"><a href="{% url accounts.views.profile %}">{{ user }}</a></div>
-	                {% endif %}
 				{% endblock header-extra %}
 			</header>
 

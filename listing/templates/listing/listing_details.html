@@ -2,6 +2,12 @@
 
 {% block content %}
 
-Details for {{ listing.title }} 
+<h3>{{ listing.title }}</h3>
+
+<label for="listing-description">Description</label>
+<div id="listing-description">{{ listing.description }}</div> 
+
+<label for="listing-skills">Required skills</label>
+<div id="listing-skills">{{ listing.required_skills }}</div> 
 
 {% endblock content %}
