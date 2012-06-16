@@ -1,0 +1,50 @@
+{% extends 'geogeld/base.html' %}
+
+{% block left-column %}
+	<div id="job-listings">
+	{% if listings %}
+		{% for listing in listings %}
+		  <div class="job-listing">
+		      <a href="/listings/{{ listing.id }}/details/">
+			      <div class="job-title">{{ listing.title }}</div>
+			      <div class="job-details">{{ listing.payment_rate }} € per hour | {{ listing.address }} - {{ listing.zipcode }} - {{ listing.city }} - {{ listing.country }}</div>
+			  </a>
+		      <div><a href="/listings/{{ listing.id }}/reply/" class="reply-button">Reply</a></div>
+              <div class="clearfix"></div>
+		  </div>
+		{% endfor %}
+		<div class="clearfix"></div>
+	{% else %}
+	No listing posted yet.
+	{% endif %}
+    </div>
+{% endblock left-column %}
+
+{% block right-column %}
+    <div id="ad-banner">
+    ads here
+	</div>
+    <div id="job-posting-box">
+        <form id="quick-posting-form" method="post" action="/listings/post/">{% csrf_token %}
+        <span id="form-title">ORDER HELP</span>
+        <hr />
+        <label id="job-title-label" for="job-title" />Title of your post</label>
+        <input id="job-title" class="form-element" type="text" name="job_title" value="Title" />
+        <br />
+        <br />
+        <span id="category-label">Where exactly do you need help?</span>
+        <div id="quick-posting-form-left-column">
+	        <input type="button" class="job-category-button chosen" value="My house" />
+	        <input type="button" class="job-category-button" value="Other" />
+        </div>
+        <div id="quick-posting-form-right-column">
+	        <input type="button" class="job-category-button" value="Workplace" />
+	        <input type="button" class="job-category-button" value="Outdoors" />
+        </div>
+        <input class="form-element" id="job-category" type="hidden" name="category" value="" />
+        <input class="form-element" id="continue-button" type="submit" value="CONTINUE" />
+		<div class="clearfix"></div>
+        </form>
+	</div>
+{% endblock right-column %}
+<div class="clearfix"></div>

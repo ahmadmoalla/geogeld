@@ -1,0 +1,100 @@
+{% extends 'geogeld/base.html' %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}accounts/css/accounts.css" />
+{% endblock extra_css %}
+
+{% block extra_js %}
+    {{ registration_form.media }}
+{% endblock extra_js %}
+
+{% block left-column %}
+	<form id="login-form" method="post" action="/login/?next={% url listing.views.listing_post %}">
+	<div class="form-header" >I have an account</div>
+	{% csrf_token %}
+	{{ login_form.as_p }}
+	<p><input type="submit" value="Continue" /></p>
+	<div class="clearfix"></div>
+	</form>
+	
+	<form id="registration-form" method="post" action="{% url accounts.views.login_or_registration %}">
+	<div class="form-header" >I don't have an account</div>
+	{% csrf_token %}
+	{{ registration_form.non_field_errors }}
+	<div class="form-row">
+		<div class="field-wrapper">
+		   <label for="id_first_name">First name:</label>
+		   {{ registration_form.first_name }}
+		   {{ registration_form.first_name.errors }}
+		</div>
+		<div class="field-wrapper">
+		   <label for="id_last_name">Last name:</label>
+		   {{ registration_form.last_name }}
+		   {{ registration_form.last_name.errors }}
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="field-wrapper">
+		   <label for="id_username">Username:</label>
+		   {{ registration_form.username }}
+		   {{ registration_form.username.errors }}
+		</div>
+		<div class="field-wrapper">
+		   <label for="id_password">Password:</label>
+		   {{ registration_form.password }}
+		   {{ registration_form.password.errors }}
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="field-wrapper">
+		   <label for="id_email">Email:</label>
+		   {{ registration_form.email }}
+		   {{ registration_form.email.errors }}
+		</div>
+		<div class="field-wrapper">
+		   <label for="id_country">Country:</label>
+		   {{ registration_form.country }}
+		   {{ registration_form.country.errors }}
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="field-wrapper">
+		   <label for="id_city">City:</label>
+		   {{ registration_form.city }}
+		   {{ registration_form.city.errors }}
+		</div>
+		<div class="field-wrapper">
+		   <label for="id_address">Address:</label>
+		   {{ registration_form.address }}
+		   {{ registration_form.address.errors }}
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="field-wrapper">
+		   <label for="id_zipcode">Zip code:</label>
+		   {{ registration_form.zipcode }}
+		   {{ registration_form.zipcode.errors }}
+		</div>
+		<div class="field-wrapper">
+		   <label for="id_mobile_number">Mobile number:</label>
+		   {{ registration_form.mobile_number }}
+		   {{ registration_form.mobile_number.errors }}
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="field-wrapper">
+		   <label for="id_birth_date">Birth date:</label>
+		   {{ registration_form.birth_date }}
+		   {{ registration_form.birth_date.errors }}
+		</div>
+	</div>
+	<div class="form-row map-row">
+		   <label for="id_location">Location:</label>
+		   <div id="location_error">{{ registration_form.location.errors }}</div>
+			<div class="clearfix"></div>
+	        {{ registration_form.location }}
+    </div>
+	<input type="submit" value="Continue" />
+	<div class="clearfix"></div>
+	</form>
+{% endblock left-column %}
