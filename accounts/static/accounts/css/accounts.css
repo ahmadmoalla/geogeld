@@ -1,7 +1,7 @@
 #registration-form, #login-form {
     width: 98%;
     padding: 0;
-    border: 1px solid gray;
+    border: 1px solid #dddddd;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -9,29 +9,71 @@
     
 }
 
-#registration-form p, #login-form p {
-  display: block;
-  width: 45%;
-  float: left;
-  padding-left: 1%;
-  line-height: 18px;
-  
-}
-
-#registration-form input, #login-form input {
-    border: 1px solid gray;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+#registration-form .field-wrapper, #login-form p {
+    display: block;
+    width: 45%;
+    margin-left: 3%;
+    float: left;
+    padding-left: 1%;
+    line-height: 18px;
+    
     
   
 }
 
-#registration-form label, #login-form label {
-  float: left;
-  
+
+#registration-form input, #login-form input {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    
+    font-size: 14pt;
+    float: right;
+    padding: 1%;
 }
 
+#registration-form label, #login-form label {
+    line-height: 30px;
+    margin-right: 2%;
+}
+
+#registration-form .form-row {
+    width: 100%;
+    float: left;
+}
+
+#registration-form .helptext{
+    color:  #dddddd;
+    font-size: 9pt;
+}
+
+#registration-form .errorlist {
+    list-style-type: none;
+    color:  #ff0000;
+    font-size: 9pt;
+    float: right;
+    
+}
+
+#registration-form .map-row {
+    margin-left: 3%;
+    padding-left: 1%;
+    text-align: left;
+}
+
+
+#registration-form #id_location {
+    border: 1px solid black;
+    width: 100%;
+}
+
+#registration-form .map-row .errorlist {
+    float: left;
+}
+
+ 
+ 
 .form-header {
   text-align: center;
   color: #ffffff; 

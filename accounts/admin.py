@@ -16,7 +16,6 @@ class UserProfileAdmin(geoadmin.OSMGeoAdmin):
     default_lat = settings.BERLIN_CENTER_LATITUDE
     default_zoom = 11
 
-
 #admin.site.unregister(User)
 admin.site.unregister(Group)
 admin.site.unregister(Site)

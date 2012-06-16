@@ -119,7 +119,9 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.gis',
 
+    'south',
     'django_extensions', # not vital for site functioning; installed only for convenience while working
+    'olwidget',
 
     'geogeld',
     'accounts',
@@ -165,6 +167,18 @@ SPHERICAL_MERCATOR = 3857 # Spatial reference system code (projection)
 # Used in admin's site to define the initial positioning of the map
 BERLIN_CENTER_LONGTITUDE = 1491592.16975 
 BERLIN_CENTER_LATITUDE = 6894161.32819
+
+# Default options for all olwidget maps
+OLWIDGET_DEFAULT_OPTIONS = {
+                            'defalut_zoom': 11,
+                            'defalut_lat': BERLIN_CENTER_LATITUDE,
+                            'defalut_lon': BERLIN_CENTER_LONGTITUDE,
+                            'mapOptions': {
+                                           'controls': ['Navigation'],
+                                           }
+                            
+                            }
+
 try:
     from local_settings import *
 except ImportError:

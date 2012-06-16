@@ -2,7 +2,7 @@
 
 a, a:visited {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 
 body {
@@ -20,31 +20,25 @@ body {
 }
 
 #container {
-    width: 100%;
+    margin: auto;
+    width: 98%;
 }
 
 #header {
-    width: 98%;
-    padding: 1%;
-    border: 1px solid gray;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+    width: 100%;
     margin-bottom: 1%;
     
 }
 
 
 #content {
-    width: 98%;
-    padding: 1%;
+    width: 100%;
     margin-bottom: 1%;
 }
 
 #footer {
     width: 98%;
     padding: 1%;
-    border: 1px solid gray;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -64,7 +58,7 @@ body {
 }
 
 #right-column {
-  width: 25%;
+  width: 29%;
   float: right;
   
 }
@@ -88,6 +82,12 @@ body {
     float: right;
 }
 
+.helptext {
+    color: #cccccc;
+    font-size: 9pt;
+    display: block;
+}
+
 #login-button {
 }
 
@@ -101,7 +101,7 @@ body {
 #ad-banner {
     height: 200px;
     background: white;
-    border: 1px solid gray;
+    border: 1px solid #dddddd;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -114,16 +114,18 @@ body {
 }
 
 #job-listings {
-    background: white;
+    background-color: #dddddd;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     margin-bottom: 2%;
+    padding: 1%;
 
 }
 
 .job-listing {
-    border: 1px solid gray;
+    text-align: left;
+    background-color: #ffffff;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -134,28 +136,22 @@ body {
 
 .job-title {
     color: #90aa08;
-    font-size: 12pt;
+    font-size: 13pt;
     font-weight: bold;
-    text-align: center;
     margin-bottom: 1%;
 }
 
 .job-details {
-    color: gray;
-    text-align: center;
+    color: #000000;
 }
 
-.job-details a {
-    color: gray;
-    font-size: 9pt;
-    float: right;
-}
 
 #job-posting-box {
 }
 
 #quick-posting-form {
     color: white;
+    text-align: center;
     font-weight: bold;
     font-size: 11pt;
     font-family: "Sans serif";
@@ -165,6 +161,10 @@ body {
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     padding: 4%;
+}
+
+#quick-posting-form #job-title{
+    font-size: 13pt;
 }
 
 .form-element {
@@ -181,16 +181,71 @@ body {
 }
 
 #continue-button {
-    color: white;
-    background-color: #90aa08;
-    border-radius: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-
     width: 40%;
-    
     font-size: 13pt;
     font-weight: bold;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-top: 4%;
+}
+
+.job-category-button {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    
+    font-size: 13pt;
+  
+}
+
+.job-category-button.chosen {
+    background-color:  #ffffff;
+}
+
+#category-label, #job-title-label {
+    margin-top: 3%;
+    float: left;
+}
+
+#quick-posting-form-left-column  {
+    width: 48%;
+    float: left;
+    
+    margin-right: 2%;
+}
+
+#quick-posting-form-right-column {
+    width: 48%;
+    float: right;
+}
+
+.reply-button {
+    float: right;
+    /*
+    color: #ffffff;
+    background-color: #90AA08;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding-padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    */
+}
+
+/* Overidden Twitter-Bootstrap styles */
+.navbar-inner {
+    min-height: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: #ff3019; /* Old browsers */
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* IE10+ */
+    background: linear-gradient(top, #ff3019 0%,#cf0404 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+       -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }

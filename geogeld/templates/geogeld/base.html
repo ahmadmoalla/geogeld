@@ -16,7 +16,10 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="{{ STATIC_URL }}/favicon.ico" />
 		<link rel="apple-touch-icon" href="{{ STATIC_URL }}/apple-touch-icon.png" />
+
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}geogeld/bootstrap/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}geogeld/css/style.css" />
+		
 		{% block extra_css %}
 		{% endblock extra_css %}
 
@@ -27,19 +30,25 @@
 	<body>
 		<div id="container">
 			<header id="header">
-                {% if user.is_authenticated %}
-                    <div id="user_info"><a href="{% url accounts.views.profile %}">{{ user }}</a></div>
-                {% endif %}
-				<h1>GeoGeld</h1>
+				<a href="{% url home %}"><h1>GeoGeld</h1></a>
 				{% block header-extra %}
-					<div id="header-buttons">
-					    <a id="explore-button" href="/listings/search">Explore</a>
-					    {% if user.is_authenticated %}
-					       <a id="logout-button" href="/logout">Logout</a>
-					    {% else %}
-					       <a id="login-button" href="/login">Login</a>
-					    {% endif %}
+					<div class="navbar">
+					  <div class="navbar-inner">
+					    <div class="container">
+							<ul class="nav pull-right">
+							  <li><a href="{% url listing.views.search %}">Explore</a></li>
+						    {% if user.is_authenticated %}
+						       <li><a id="logout-button" href="{% url logout %}">Logout</a></li>
+						    {% else %}
+						       <li><a id="login-button" href="/login">Login</a></li>
+						    {% endif %}
+							</ul>
+					    </div>
+					  </div>
 					</div>
+	                {% if user.is_authenticated %}
+	                    <div id="user_info"><a href="{% url accounts.views.profile %}">{{ user }}</a></div>
+	                {% endif %}
 				{% endblock header-extra %}
 			</header>
 
@@ -59,8 +68,8 @@
             </div>
 	    	
 		{% endblock content %}
-	    </div>
 	    <div class="clearfix"></div>
+	    </div>
 
 			<footer id="footer">
 				<p>
@@ -68,5 +77,8 @@
 				</p>
 			</footer>
 		</div>
+	    <script src="{{ STATIC_URL }}/geogeld/js/jquery-1.7.2.min.js"></script>
+	    <script src="{{ STATIC_URL }}/geogeld/bootstrap/js/bootstrap.min.js"></script>
+        <script src="{{ STATIC_URL }}/geogeld/js/main.js"></script>
 	</body>
 </html>
