@@ -7,3 +7,10 @@ Set the correct postgres dbengin :
 https://docs.djangoproject.com/en/dev/ref/contrib/gis/install/#creating-a-spatial-database-template-for-postgis
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+###Pusing to HEROKU 
+###       Downloading/unpacking django-user-accounts (from -r requirements.txt (line 11))
+         Could not find any downloads that satisfy the requirement django-user-accounts (from -r requirements.txt (line 11))
+       No distributions at all found for django-user-accounts (from -r requirements.txt (line 11))
+       Storing complete log in /app/.pip/pip.log
+ !     Heroku push rejected, failed to compile Python/django app
+
