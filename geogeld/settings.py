@@ -12,12 +12,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/ahmad/geogeld/geogeld/geogeld/sqlite.db',                      # Or path to database file if using sqlite3.
-        'USER': 'geogeld',                      # Not used with sqlite3.
-        'PASSWORD': 'geogeld',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'geogeld',
+        'USER': 'dbuser',
+        'PASSWORD': 'dbpass',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -178,7 +178,7 @@ OLWIDGET_DEFAULT_OPTIONS = {
                                            }
                             
                             }
-
+#For your local confs:
 try:
     from local_settings import *
 except ImportError:
