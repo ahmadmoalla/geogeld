@@ -8,6 +8,6 @@ django-extensions==0.8
 django-olwidget
 dj-database-url
 django-appconf==0.5
-django-user-accounts==1.0
+django-user-accounts
 pytz==2012c
 wsgiref==0.1.2
