@@ -183,4 +183,3 @@ try:
     from local_settings import *
 except ImportError:
     print("local_settings couldn't be imported. Maybe it causes ImportError or some other error")
-    
