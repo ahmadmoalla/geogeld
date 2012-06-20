@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 from accounts.models import UserProfile
 from listing.forms import PostListingForm
-from listing.models import Listing
+from listing.models import Listing, Category
 
 def search(request, template_name='listing/index.html'):
     context = {}
@@ -27,9 +27,12 @@ def listing_reply(request, listing_id, template_name='listing/listing_reply.html
     context = {"listing": listing}
     return render_to_response(template_name, context, RequestContext(request))
 
-@login_required(login_url='/accounts/login_or_registration/')
+# DO NOT decorate with @login_required! Check is made inside the view function
 def listing_post(request, template_name='listing/listing_post.html'):
+    
     if request.method == 'POST':
+        if not request.user.is_authenticated():
+            return HttpResponseRedirect('/accounts/login_or_registration/')
         # clean the location field from the SRID=...; part which olwidget.js(?) inserts
         post_data = dict(request.POST) # we need this because QueryDict is immutable
         location_string = ''.join(post_data.get('location'))  # use ''.join() to stringify the list
@@ -45,11 +48,21 @@ def listing_post(request, template_name='listing/listing_post.html'):
             return HttpResponseRedirect('/')
 
     else:
+        title = request.GET.get('title')
+        try:
+            category = Category.objects.get(name=request.GET.get('category'))
+        except Category.DoesNotExist:
+            # TODO: Default form field value should not be defined here
+            category = Category.objects.get(name='Other') 
+            
+        if not request.user.is_authenticated():
+            return HttpResponseRedirect('/accounts/login_or_registration/?title=%s&category=%s' % (title, category))
+
         user_profile = UserProfile.objects.get(user_ptr_id=request.user.id)
         data = {
                 'user': request.user.id,
-                'title': request.GET.get('title'),
-                'category': request.GET.get('category').lower(),
+                'title': title,
+                'category': category,
                 'country': user_profile.country,
                 'city': user_profile.city,
                 'address': user_profile.address,

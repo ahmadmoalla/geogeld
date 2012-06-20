@@ -9,7 +9,7 @@
 {% endblock extra_js %}
 
 {% block left-column %}
-<form id="post-listing-form" method="post" action="{% url listing.views.listing_post %}">
+<form id="post-listing-form" class="form" method="post" action="{% url listing.views.listing_post %}">
 <div class="form-header" >Describe the work</div>
 {% csrf_token %}
     {{ post_listing_form.non_field_errors }}

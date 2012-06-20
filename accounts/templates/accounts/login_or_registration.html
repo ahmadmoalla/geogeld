@@ -9,7 +9,7 @@
 {% endblock extra_js %}
 
 {% block left-column %}
-	<form id="login-form" method="post" action="/login/?next={% url listing.views.listing_post %}">
+	<form id="login-form" method="post" action="/login/?next={% url listing.views.listing_post %}%3ftitle={{ title }}%26category={{ category }}">
 	<div class="form-header" >I have an account</div>
 	{% csrf_token %}
 	{{ login_form.as_p }}
@@ -94,6 +94,8 @@
 			<div class="clearfix"></div>
 	        {{ registration_form.location }}
     </div>
+	<input type="hidden" name="title" value="{{ title }}" />
+	<input type="hidden" name="category" value="{{ category }}" />
 	<input type="submit" value="Continue" />
 	<div class="clearfix"></div>
 	</form>

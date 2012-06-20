@@ -9,7 +9,7 @@
 			      <div class="job-title">{{ listing.title }}</div>
 			      <div class="job-details">{{ listing.payment_rate }} € per hour | {{ listing.address }} - {{ listing.zipcode }} - {{ listing.city }} - {{ listing.country }}</div>
 			  </a>
-		      <div><a href="/listings/{{ listing.id }}/reply/" class="reply-button btn btn-small btn-action">Reply</a></div>
+		      <div><a href="/listings/{{ listing.id }}/reply/" class="reply-button">Reply</a></div>
               <div class="clearfix"></div>
 		  </div>
 		{% endfor %}
@@ -18,6 +18,18 @@
 	No listing posted yet.
 	{% endif %}
     </div>
+    <div class="pagination pagination-centered">
+	  <ul>
+	    <li><a href="#">&lt;&lt;</a></li>
+	    <li class="active">
+	      <a href="#">1</a>
+	    </li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">&gt;&gt;</a></li>
+	  </ul>
+	</div>
 {% endblock left-column %}
 
 {% block right-column %}
@@ -25,24 +37,24 @@
     ads here
 	</div>
     <div id="job-posting-box">
-        <form id="quick-posting-form" method="get" action="/listings/post/">{% csrf_token %}
+        <form id="quick-posting-form" method="get" action="/listings/post/">
         <span id="form-title">ORDER HELP</span>
         <hr />
         <label id="job-title-label" for="job-title" />Title of your post</label>
-        <input id="job-title" class="form-element" type="text" name="title" value="Title" />
+        <input id="job-title" class="form-element" type="text" name="title" placeholder="Title ..." />
         <br />
         <br />
         <span id="category-label">Where exactly do you need help?</span>
         <div id="quick-posting-form-left-column">
-	           <input type="button" class="job-category-button btn btn-warning chosen" cat-name="indoors" value="My House" />
-	           <input type="button" class="job-category-button btn btn-warning" cat-name="outdoors" value="Outdoors" />
+	           <input type="button" class="job-category-button btn btn-warning chosen" cat-name="Indoors" value="My House" />
+	           <input type="button" class="job-category-button btn btn-warning" cat-name="Outdoors" value="Outdoors" />
         </div>
         <div id="quick-posting-form-right-column">
-	           <input type="button" class="job-category-button btn btn-warning" cat-name="workplace" value="Workplace" />
-	           <input type="button" class="job-category-button btn btn-warning" cat-name="other" value="Other" />
+	           <input type="button" class="job-category-button btn btn-warning" cat-name="Workplace" value="Workplace" />
+	           <input type="button" class="job-category-button btn btn-warning" cat-name="Other" value="Other" />
         </div>
-        <input class="form-element" id="job-category" type="hidden" name="category" value="indoors" />
-        <input class="form-element btn btn-primary pull-right" id="continue-button" type="submit" value="CONTINUE" />
+        <input class="form-element" id="job-category" type="hidden" name="category" value="Indoors" />
+        <input class="form-element btn pull-right" id="continue-button" type="submit" value="CONTINUE" />
 		<div class="clearfix"></div>
         </form>
 	</div>

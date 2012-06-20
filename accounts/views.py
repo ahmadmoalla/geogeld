@@ -22,6 +22,9 @@ def login_or_registration(request, template_name='accounts/login_or_registration
     if request.method == 'POST':
         # clean the location field from the SRID=...; part which olwidget.js(?) inserts
         post_data = dict(request.POST) # we need this because QueryDict is immutable
+        title = request.POST.get('title')
+        category = request.POST.get('category')
+        
         location_string = ''.join(post_data.get('location'))  # use ''.join() to stringify the list
         if location_string:
             # Extract the SRID=...; part of the location value
@@ -37,10 +40,16 @@ def login_or_registration(request, template_name='accounts/login_or_registration
             new_user.save()
             new_user = authenticate(username=username, password=password)
             login(request, new_user)
-            return HttpResponseRedirect('/listings/post')
-
+            return HttpResponseRedirect('/listings/post/?title=%s&category=%s' % (title, category))
+        
+    title = request.GET.get('title')
+    category = request.GET.get('category')
+    
     context = {
                "registration_form": registration_form,
                "login_form": login_form,
+               "title": title,
+               "category": category,
                }
+    
     return render_to_response(template_name, context, RequestContext(request))

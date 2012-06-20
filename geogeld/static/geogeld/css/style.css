@@ -43,13 +43,11 @@ body {
 
 #container {
     margin: auto;
-    padding: 1%;
-    width: 98%;
+    width: 100%;
 }
 
 #header {
     width: 100%;
-    margin-bottom: 1%;
 }
 
 #header a, a:visited {
@@ -58,37 +56,46 @@ body {
 
 
 #content {
-    width: 100%;
-    margin-bottom: 1%;
+    width: 98%;
+    margin: 1%;
 }
 
 #footer {
     width: 98%;
-    text-align: center;    
-    font-size: 14pt;
-    font-weight: bold;
-    color: gray;
+    text-align: left;
+    font-size: 9pt;
+    color: #ffffff;
     min-height: 40px;
-    padding-top: 20px;
-    padding-left: 20px;
+    padding: 1%;
     
-    border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -o-border-radius: 7px;
-    
-    background: #eeeeee; /* Old browsers */
-    background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* IE10+ */
-    background: linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-       -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1); 
-  
+    background: #333333; /* Old browsers */
 }
+
+
+#footer-links .column {
+    width: 30%;
+    float: left;
+    border-right: 1px dashed gray;
+}
+
+#footer-links .column ul {
+    list-style-type: none;
+}
+
+#footer-links .last-element {
+    border-right: none;
+}
+
+#footer a {
+    color: #ffffff;
+}
+
+#footer .column .title {
+    color: #90aa08;
+    font-size: 12pt;
+    margin-bottom: 2%;
+}
+
 
 #left-column {
   width: 70%;
@@ -169,7 +176,7 @@ body {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     padding: 2%;
 }
 
@@ -177,7 +184,7 @@ body {
     text-decoration: none;
 }
 
-  .job-title {
+.job-title {
     color: #90aa08;
     font-size: 13pt;
     font-weight: bold;
@@ -225,6 +232,7 @@ body {
 
 #continue-button {
     width: 40%;
+    color: #000000;
     font-size: 13pt;
     font-weight: bold;
     margin-top: 4%;
@@ -235,12 +243,14 @@ body {
     height: 70px;
     margin-bottom: 3%;
     margin-top: 3%;
-    
+    background: #ffffff;
+    color: #000000;
     font-size: 13pt;
   
 }
 
 #quick-posting-form .job-category-button.chosen {
+    background: #aaaaaa;
     color:  #000000;
 }
 
@@ -263,16 +273,18 @@ body {
 
 .reply-button {
     float: right;
-    /*
     color: #ffffff;
     background-color: #90AA08;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    padding-padding: 1%;
-    padding-left: 2%;
-    padding-right: 2%;
-    */
+    padding: 5px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+a:hover.reply-button {
+    color: #000000;
 }
 
 .navbar-inner .nav {
@@ -296,4 +308,14 @@ body {
        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
             
+}
+
+#login-form {
+    margin: 0 auto;
+    width: 20%;
+}
+
+
+.form input {
+    padding: 1%;
 }

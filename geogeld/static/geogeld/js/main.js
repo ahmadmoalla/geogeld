@@ -26,5 +26,5 @@ function toggle_job_title_state(){
 }
 
 $('.job-category-button').live('click', chose_category);
-$('#job-title').live('click', toggle_job_title_state);
-$('#job-title').live('blur', toggle_job_title_state);
+//$('#job-title').live('click', toggle_job_title_state);
+//$('#job-title').live('blur', toggle_job_title_state);
