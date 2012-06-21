@@ -11,10 +11,10 @@ urlpatterns = patterns('',
     url(r'^login/?next=(?P<redirect_field_name>.*)/', 'django.contrib.auth.views.login', name="login"),
     url(r'^logout/', 'django.contrib.auth.views.logout', {'next_page': '/'}, name="logout"),
 
-    url(r'^$', 'geogeld.views.home', name='home'),
     
     url(r'^profile/', include('accounts.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^listings/', include('listing.urls')),
 
+    url(r'^$', 'geogeld.views.home', name='home'),
 )

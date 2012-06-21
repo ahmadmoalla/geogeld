@@ -168,6 +168,8 @@ SPHERICAL_MERCATOR = 3857 # Spatial reference system code (projection)
 BERLIN_CENTER_LONGTITUDE = 1491592.16975 
 BERLIN_CENTER_LATITUDE = 6894161.32819
 
+DISPLAY_LISTINGS_PER_PAGE = 5
+
 # Default options for all olwidget maps
 OLWIDGET_DEFAULT_OPTIONS = {
                             'defalut_zoom': 11,

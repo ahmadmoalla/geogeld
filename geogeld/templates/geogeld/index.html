@@ -1,6 +1,7 @@
 {% extends 'geogeld/base.html' %}
 
 {% block left-column %}
+	<div>Found {{ paginator.count }} job offers</div>
 	<div id="job-listings">
 	{% if listings %}
 		{% for listing in listings %}
@@ -20,14 +21,30 @@
     </div>
     <div class="pagination pagination-centered">
 	  <ul>
-	    <li><a href="#">&lt;&lt;</a></li>
-	    <li class="active">
-	      <a href="#">1</a>
-	    </li>
-	    <li><a href="#">2</a></li>
-	    <li><a href="#">3</a></li>
-	    <li><a href="#">4</a></li>
-	    <li><a href="#">&gt;&gt;</a></li>
+	    {% if listings.has_previous %}
+    	    <li><a href="?page={{ listings.previous_page_number }}">&lt;&lt;</a></li>
+		    <li><a href="?page=1">1</a></li>
+		    {% if listings.number > 3 %}
+			    <li class="disabled"><a href="javascript:void(0);">...</a></li>
+		    {% endif %}
+		    {% if listings.previous_page_number > 1 %}
+		       <li><a href="?page={{ listings.previous_page_number }}">{{ listings.previous_page_number }}</a></li>
+		    {% endif %}
+	    {% endif %}
+
+
+	    <li class="active"><a href="?page={{ listings.number }}">{{ listings.number }}</a></li>
+
+	    {% if listings.has_next %}
+		    {% if listings.next_page_number < paginator.num_pages %}
+			    <li><a href="?page={{ listings.next_page_number }}">{{ listings.next_page_number }}</a></li>
+		    {% endif %}
+		    {% if listings.next_page_number <= before_last_page %}
+			    <li class="disabled"><a href="javascript:void(0);">...</a></li>
+		    {% endif %}
+		    <li><a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></li>
+		    <li><a href="?page={{ listings.next_page_number }}">&gt;&gt;</a></li>
+	    {% endif %}
 	  </ul>
 	</div>
 {% endblock left-column %}
