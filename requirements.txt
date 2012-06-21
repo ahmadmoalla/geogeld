@@ -1,7 +1,12 @@
 #Add all what you install into your Virtualenv to this file
+#pip freeze -r requirements.txt to view what is missing
 #"pip install -r requirements.txt" to install all the required apps
 Django==1.4
 psycopg2==2.4.5
 South==0.7.5
 django-extensions==0.8
-django-user-accounts
+django-olwidget
+dj-database-url
+django-appconf==0.5
+--extra-index-url=http://dist.pinaxproject.com/dev/ django-user-accountspytz==2012c
+wsgiref==0.1.2
